@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VoxPop</title>
+    <link rel="stylesheet" href="/static/styles_comment.css">
+</head>
+<body>
+<div class="main_part">
+    <div class="home_btn">
+    <a href="/">Вернуться на главную</a>
+    </div>
+  <form action="/comment" method="post">
+      <div>
+          <label> Введите свой комментарий: </label><br>
+          <input type="text" name="text" class="input_text" required><br><br>
+          <div class="category_input">
+          <label> Выберите категорию: </label><br>
+          </div>
+              <label id="positive">
+                <input type="radio" name="category" value="Positive" required>
+                  Positive
+              </label>
+              <label id="negative">
+                <input type="radio" name="category" value="Negative" required>
+                  Negative
+              </label>
+      </div><br>
+      <div class="submit_button_comment">
+          <input type="submit" value="Добавить комментарий">
+      </div>
+
+  </form>
+
+    <h2>Список комментариев:</h2>
+        <div class="ol_comments">
+    <ol>
+        {% for comment in comments %}
+            <li>
+                <h3><cite>"{{ comment.text }}"</cite></h3>
+                <p class="cat_p"><strong>- Категория:</strong> {{ comment.category }}</p>
+                </li>
+        {% else %}
+            <li class="no_comments">Комментариев пока нет</li>
+        {% endfor %}
+    </ol>
+        </div>
+</div>
+<div class="pagination">
+    {% if previous_page %}
+            <a href="{{ previous_page }}" class="prev_b">Previous</a>
+    {% endif %}
+
+    {% if next_page %}
+            <a href="{{ next_page }}" class="next_b">Next</a>
+    {% endif %}
+    </div>
+</body>
+</html>

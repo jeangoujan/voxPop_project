@@ -1,0 +1,41 @@
+body {
+    margin-top: 20em;
+    font-family: Futura;
+    background-color: #4d2f5c;
+}
+
+p, h1, h2, h3, h4, h5, h6, li, label, input {
+
+    color: #f4f2f5;
+    text-align: center;
+}
+
+.submit_btn {
+    display: flex; /* Используем Flexbox для кнопки */
+    justify-content: center; /* Центрируем по горизонтали */
+    align-items: center; /* Центрируем по вертикали */
+}
+.submit_btn a {
+    display: inline-block; /* Позволяет задавать ширину, высоту и выравнивать */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    text-align: center; /* Выравнивание текста */
+    text-decoration: none; /* Убирает подчеркивание ссылки */
+    background-color: white; /* Фон кнопки */
+    color: #4d2f5c; /* Цвет текста */
+    border: 2px solid #4d2f5c; /* Добавляет обводку */
+    border-radius: 8px; /* Закруглённые края */
+    font-size: 16px; /* Размер текста */
+    font-weight: bold; /* Жирный текст */
+    transition: all 0.3s ease; /* Плавный переход для эффектов */
+}
+
+.submit_btn a:hover {
+    background-color: #60466e; /* Изменение фона при наведении */
+    color: white; /* Изменение цвета текста при наведении */
+    border-color: #60466e; /* Обводка остаётся того же цвета */
+}
+
+
+.byDamir {
+    margin-top: 25em;
+}
